@@ -23,14 +23,14 @@ Cenário de Negócio / Concepção
 
 
 # 4.	Clientes e Usuários Envolvidos:
-o	Clientes: Proprietários de veículos que buscam serviços de manutenção.
-o	Usuários: Atendentes da oficina mecânica que realizam cadastros, agendamentos e atualizações.
-o	Impactados: O proprietários da oficina, que se beneficiarão de um sistema mais organizado e eficiente.
+	Clientes: Proprietários de veículos que buscam serviços de manutenção.
+	Usuários: Atendentes da oficina mecânica que realizam cadastros, agendamentos e atualizações.
+	Impactados: O proprietários da oficina, que se beneficiarão de um sistema mais organizado e eficiente.
 # 5.	Critérios de Qualidade:
-o	Usabilidade: O sistema deve ser fácil de usar para todos os tipos de usuários.
-o	Desempenho: O sistema deve responder rapidamente às solicitações.
-o	Escalabilidade: O sistema deve suportar a adição de novos clientes e veículos sem perda de desempenho.
-o	Segurança: Proteção das informações pessoais dos clientes e registros de manutenção.
+	Usabilidade: O sistema deve ser fácil de usar para todos os tipos de usuários.
+	Desempenho: O sistema deve responder rapidamente às solicitações.
+	Escalabilidade: O sistema deve suportar a adição de novos clientes e veículos sem perda de desempenho.
+	Segurança: Proteção das informações pessoais dos clientes e registros de manutenção.
 ________________________________________
 # Modelo de Caso de Uso
 Casos de Uso Resumidos:
