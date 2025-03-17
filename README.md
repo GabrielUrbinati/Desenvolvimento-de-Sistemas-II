@@ -84,5 +84,45 @@ ________________________________________
 7.	Pós-condição: A manutenção está agendada e registrada no sistema.
 
 
+# TG2 - Modelagem de negócio e prototipação
+
+A modelagem do domínio foi realizada com base nos casos de uso e estruturada seguindo boas práticas e padrões de análise de sistemas. Aqui está um detalhamento do processo:
+
+# 1. Identificação das Entidades Principais (Baseada nos Casos de Uso)
+
+A partir dos casos de uso, foram identificadas as entidades principais que representam os conceitos do sistema:
+
+	•	Cliente: necessário para o cadastro e agendamentos.
+ 
+	•	Veículo: vinculado ao cliente e essencial para a manutenção.
+ 
+	•	Agendamento: criado ao agendar uma manutenção.
+ 
+	•	Manutenção: contém detalhes sobre os serviços realizados.
+ 
+	•	Histórico de Manutenção: permite consultar serviços anteriores.
+
+
+
+# 2. Aplicação de Padrões de Análise
+
+Para estruturar melhor, foi aplicado alguns padrões de análise comuns em modelagem de domínio:
+
+	•	Associação entre classes: Cliente e Veículo possuem uma relação “um-para-muitos” (um cliente pode ter vários veículos).
+ 
+	•	Agregação: O Histórico de Manutenção armazena várias manutenções associadas a um cliente.
+ 
+	•	Encapsulamento: Os atributos e métodos das classes foram definidos para garantir que cada entidade tenha um papel claro no sistema.
+
+# 3. Ajustes e Melhorias
+
+Durante a modelagem, foram feitos alguns ajustes:
+	•	Inicialmente, Histórico de Manutenção não existia como entidade separada, mas foi criado para facilitar consultas.
+ 
+	•	O relacionamento entre Agendamento e Manutenção foi refinado para garantir que cada manutenção esteja sempre associada a um agendamento válido.
+ 
+	•	O atributo status foi adicionado em Agendamento e Manutenção para permitir o rastreamento do progresso dos serviços.
+
+
 
 
