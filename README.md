@@ -32,8 +32,8 @@ Cenário de Negócio / Concepção
 	Escalabilidade: O sistema deve suportar a adição de novos clientes e veículos sem perda de desempenho.
 	Segurança: Proteção das informações pessoais dos clientes e registros de manutenção.
 ________________________________________
-# Modelo de Caso de Uso
-Casos de Uso Resumidos:
+
+# Casos de Uso Resumidos:
 
 1	Atendente - Cadastrar Cliente - Sistema: Registrando informações do cliente.
 
@@ -51,6 +51,11 @@ Casos de Uso Resumidos:
 
 8	Atendente - Cancelar ou Reagendar - Sistema: Alterando datas ou cancelando serviços.
 
+# Diagrama de casos de uso:
+
+![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramacasosdeuso.png "Logo Title Text 1 " )
+
+<img src="https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramacasosdeuso.png" alt="IMAGE ALT TEXT HERE" width="240" height="auto" border="10" />
 ________________________________________
 
 # Caso de Uso Crítico:
