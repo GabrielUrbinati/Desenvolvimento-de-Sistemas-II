@@ -1,15 +1,17 @@
 # Desenvolvimento-de-Sistemas-II
 Repositório para os arquivos do projeto de Desenvolvimento de Sistemas II
-# Desenvolvimento de Sistemas II
-# Professor:
-# Aluno: Gabriel Branco Urbinati
-# RA: 10443760
-# Turma: 3J
-# Projeto : Sistema de Gerenciamento de Manutenção de Veículos.
+ 
+ Professor:
+ Aluno: Gabriel Branco Urbinati
+ RA: 10443760
+ Turma: 3J
+ Projeto : Sistema de Gerenciamento de Manutenção de Veículos.
+
+# TG1 - Cenário de Negócio, Concepção do Sistema e Modelo de Caso de Uso
 
 # INTRODUÇÃO
 Sistema simples para auxiliar oficinas mecânicas a organizar atendimentos, permitindo cadastrar clientes, veículos, serviços, facilitando e registrando toda a operação.
-# TG1 - Cenário de Negócio, Concepção do Sistema e Modelo de Caso de Uso
+
 Cenário de Negócio / Concepção
 # 1.	Problema ou Oportunidade Percebida:
 o	As oficinas mecânicas enfrentam dificuldades na organização de atendimentos e na gestão de agendamentos, o que pode resultar em perda de clientes e ineficiência operacional.
