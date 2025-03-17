@@ -88,7 +88,7 @@ ________________________________________
 
 Modelagem de Domínio:
 
-https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/classes.png
+
 ![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/classes.png "Logo Title Text 1 " )
 
 
