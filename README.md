@@ -86,6 +86,10 @@ ________________________________________
 
 # TG2 - Modelagem de negócio e prototipação
 
+Modelagem de Domínio:
+
+
+
 A modelagem do domínio foi realizada com base nos casos de uso e estruturada seguindo boas práticas e padrões de análise de sistemas. Aqui está um detalhamento do processo:
 
 # 1. Identificação das Entidades Principais (Baseada nos Casos de Uso)
