@@ -35,6 +35,7 @@ ________________________________________
 # Modelo de Caso de Uso
 Casos de Uso Resumidos:
 o	Atendente - Cadastrar Cliente - Sistema: Registrando informações do cliente.
+
 o	Atendente - Cadastrar Veículo - Sistema: Associando o veículo ao cliente.
 o	Atendente - Agendar Manutenção - Sistema: Planejando data e horário do serviço.
 o	Atendente - Atualizar Status do Serviço - Sistema: Mudando status da manutenção.
