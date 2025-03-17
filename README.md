@@ -51,3 +51,29 @@ Casos de Uso Resumidos:
 
 8	Atendente - Cancelar ou Reagendar - Sistema: Alterando datas ou cancelando serviços.
 
+________________________________________
+
+# Caso de Uso Crítico:
+	  Nome: Agendar Manutenção
+   
+	  Ator Principal: Atendente
+   
+	  Descrição: O atendente seleciona um cliente e um veículo, escolhe uma data e hora, e define o tipo de serviço para registrar a manutenção a ser realizada.
+   
+	  Pré-condição: O cliente e o veículo devem estar cadastrados no sistema.
+   
+# Fluxo Principal:
+
+1.	O atendente acessa a funcionalidade de agendamento.
+   
+2.	O atendente seleciona um cliente.
+   
+3.	O atendente seleciona um veículo associado ao cliente.
+   
+4.	O atendente escolhe data e horário para o serviço.
+
+5.	O atendente seleciona o tipo de serviço necessário.
+    
+6.	O sistema registra o agendamento e confirma para o atendente.
+    
+7.	Pós-condição: A manutenção está agendada e registrada no sistema.
