@@ -77,3 +77,8 @@ ________________________________________
 6.	O sistema registra o agendamento e confirma para o atendente.
     
 7.	Pós-condição: A manutenção está agendada e registrada no sistema.
+
+
+
+![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramacasosdeuso.png "Logo Title Text 1")
+
