@@ -34,13 +34,20 @@ Cenário de Negócio / Concepção
 ________________________________________
 # Modelo de Caso de Uso
 Casos de Uso Resumidos:
-o	Atendente - Cadastrar Cliente - Sistema: Registrando informações do cliente.
 
-o	Atendente - Cadastrar Veículo - Sistema: Associando o veículo ao cliente.
-o	Atendente - Agendar Manutenção - Sistema: Planejando data e horário do serviço.
-o	Atendente - Atualizar Status do Serviço - Sistema: Mudando status da manutenção.
-o	Atendente - Listar Agendamentos - Sistema: Visualizando agendamentos.
-o	Atendente - Consultar Manutenção - Sistema: Acessando informações detalhadas sobre serviços.
-o	Atendente - Consultar Histórico de Manutenções - Sistema: Verificando registros anteriores.
-o	Atendente - Cancelar ou Reagendar - Sistema: Alterando datas ou cancelando serviços.
+1	Atendente - Cadastrar Cliente - Sistema: Registrando informações do cliente.
+
+2	Atendente - Cadastrar Veículo - Sistema: Associando o veículo ao cliente.
+
+3	Atendente - Agendar Manutenção - Sistema: Planejando data e horário do serviço.
+
+4	Atendente - Atualizar Status do Serviço - Sistema: Mudando status da manutenção.
+
+5	Atendente - Listar Agendamentos - Sistema: Visualizando agendamentos.
+
+6	Atendente - Consultar Manutenção - Sistema: Acessando informações detalhadas sobre serviços.
+
+7	Atendente - Consultar Histórico de Manutenções - Sistema: Verificando registros anteriores.
+
+8	Atendente - Cancelar ou Reagendar - Sistema: Alterando datas ou cancelando serviços.
 
