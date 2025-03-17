@@ -55,7 +55,7 @@ ________________________________________
 
 ![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramacasosdeuso.png "Logo Title Text 1 " )
 
-<img src="https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramacasosdeuso.png" alt="IMAGE ALT TEXT HERE" width="2600" height="auto" border="10" />
+<img src="https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramacasosdeuso.png" alt="IMAGE ALT TEXT HERE" width="5600" height="auto" border="10" />
 ________________________________________
 
 # Caso de Uso Crítico:
