@@ -88,6 +88,10 @@ ________________________________________
 
 Modelagem de Domínio:
 
+https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/classes.png
+![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/classes.png "Logo Title Text 1 " )
+
+
 
 
 A modelagem do domínio foi realizada com base nos casos de uso e estruturada seguindo boas práticas e padrões de análise de sistemas. Aqui está um detalhamento do processo:
