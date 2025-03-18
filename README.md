@@ -133,4 +133,41 @@ Durante a modelagem, foram feitos alguns ajustes:
 
 
 
+ # Frames ( telas principais): 
+
+ # Login:
+ 
+![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/Login.jpg "Logo Title Text 1 " )
+
+# Inicio
+Após logar o usuário tem essas opções para navegar no sistema, no protótipo : 
+
+![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/Inicio.jpg "Logo Title Text 1 " )
+
+# Cadastrar Cliente
+
+No cadastrar cliente, temos os campos de nome, email, telefone e email.
+
+![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/CadastrarCliente.jpg "Logo Title Text 1 " )
+
+# Cadastrar Veículo
+
+Aqui podemos cadastrar as informações necessárias do veículo e associar a apenas um cliente.
+
+![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/CadastrarVeiculo.jpg "Logo Title Text 1 " )
+
+# Agendar Manutenção
+
+Aqui o atendente pode agendar uma manutenção com as informações do cliente e veiculo.
+
+![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/AgendManut.jpg "Logo Title Text 1 " )
+
+# Status
+
+O atendente pode consultar as manutenções por status e mudar o status delas (em outra página Status por Cliente)
+
+![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/status.jpg "Logo Title Text 1 " )
+
+
+
 
