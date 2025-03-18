@@ -168,6 +168,6 @@ O atendente pode consultar as manutenções por status e mudar o status delas (e
 
 ![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/status.jpg "Logo Title Text 1 " )
 
-
+link interativo do protótipo : https://www.figma.com/design/w8zd6e34MCzkzNq1xp9fCW/Figma-basics?node-id=601-871&t=KX8kKaOyYAMytcop-1
 
 
