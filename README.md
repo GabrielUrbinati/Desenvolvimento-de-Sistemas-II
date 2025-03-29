@@ -166,6 +166,68 @@ Aqui o atendente pode agendar uma manutenção com as informações do cliente e
 
 O atendente pode consultar as manutenções por status e mudar o status delas (em outra página Status por Cliente)
 
+
+
+
+
+# Especificação de Requisitos - Sistema de Gerenciamento de Manutenção de Veículos
+
+## Introdução
+
+### Propósito
+O presente documento tem como objetivo descrever detalhadamente os requisitos do Sistema de Gerenciamento de Manutenção de Veículos, garantindo que todas as funcionalidades essenciais e regras de negócio sejam compreendidas e implementadas corretamente.
+
+### Escopo
+O sistema visa facilitar o gerenciamento de oficinas mecânicas, permitindo o cadastro de clientes, veículos e agendamentos de manutenções, além de acompanhar o status dos serviços e manter um histórico de manutenções.
+
+### Definições, Acrônimos e Abreviações
+- **Usuário**: Atendente da oficina mecânica que utiliza o sistema.
+- **Cliente**: Proprietário do veículo que solicita serviços de manutenção.
+- **Agendamento**: Registro de uma manutenção futura para um veículo.
+- **Histórico de Manutenção**: Lista de serviços realizados em um determinado veículo.
+
+## Desempenho
+
+- O sistema deve garantir que a consulta de agendamentos e a alteração de status das manutenções sejam realizadas em no máximo 3 segundos, independentemente do número de registros no banco de dados.
+- O sistema deve suportar até 100 usuários simultâneos (atendentes) sem degradação de desempenho, mesmo quando vários atendimentos estão sendo realizados ao mesmo tempo.
+
+## Usabilidade
+
+- O sistema deve ter uma interface simples e intuitiva, permitindo que atendentes inexperientes realizem tarefas como cadastro de clientes, veículos e agendamentos de manutenção em até 2 minutos após o primeiro contato com o sistema.
+- A navegação deve ser clara e o fluxo de tarefas (como agendar manutenção e consultar histórico de serviços) deve seguir uma sequência lógica e fácil de entender.
+
+## Segurança
+
+- Todos os dados pessoais dos clientes (nome, telefone, e-mail) e informações dos veículos devem ser armazenados com criptografia de ponta a ponta para garantir a proteção contra acessos não autorizados.
+- O sistema deve autenticar todos os atendentes por meio de login e senha, garantindo que apenas usuários autorizados possam acessar informações sensíveis, como detalhes de clientes e status de manutenções.
+- O sistema deve estar em conformidade com a Lei Geral de Proteção de Dados (LGPD), garantindo que os dados pessoais sejam tratados de acordo com as regulamentações legais.
+
+## Confiabilidade
+
+- O sistema deve garantir uma disponibilidade mínima de 99,5% durante o horário de operação das oficinas (de segunda a sábado, das 8h às 18h). Isso significa que o sistema pode estar fora do ar no máximo 12 horas por ano.
+- O sistema deve implementar backup automático diário de todos os dados (clientes, veículos, manutenções e histórico), com armazenamento em uma solução de backup segura. Em caso de falha, o sistema deve ser capaz de restaurar os dados até o ponto do último backup realizado, sem perda de informações importantes.
+- Mecanismos de recuperação devem ser implementados, de modo que, em caso de falha de algum componente (como banco de dados ou servidor), o sistema consiga retornar à operação normal em no máximo 30 minutos.
+- O sistema deve ter uma auditoria de logs para registrar todas as operações críticas, como alterações de status de manutenções e agendamentos. Esses logs devem ser armazenados por pelo menos 6 meses para rastreamento e solução de problemas.
+
+## Requisitos
+
+### 2.1. Requisitos Funcionais
+
+
+
+### 2.2. Requisitos Não Funcionais
+
+
+
+### 2.3. Requisitos Suplementares
+
+
+
+### Regras de Negócio
+
+
+
+
 ![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/status.jpg "Logo Title Text 1 " )
 
 link interativo do protótipo : https://www.figma.com/design/w8zd6e34MCzkzNq1xp9fCW/Figma-basics?node-id=601-871&t=KX8kKaOyYAMytcop-1
