@@ -215,30 +215,52 @@ O sistema visa facilitar o gerenciamento de oficinas mecânicas, permitindo o ca
 ## Requisitos
 
 ### 2.1. Requisitos Funcionais
+
 ID	Descrição
+
 RF-001	O sistema deve permitir o cadastro de clientes, armazenando nome, e-mail e telefone.
+
 RF-002	O sistema deve permitir o cadastro de veículos, vinculando-os a um cliente específico.
+
 RF-003	O sistema deve possibilitar o agendamento de manutenções, registrando a data, hora e serviço a ser realizado.
+
 RF-004	O sistema deve permitir que o atendente atualize o status de uma manutenção ("Pendente", "Em Andamento", "Concluído").
+
 RF-005	O sistema deve permitir a listagem de todos os agendamentos de manutenção.
+
 RF-006	O sistema deve permitir a consulta de detalhes de uma manutenção específica.
+
 RF-007	O sistema deve fornecer um histórico de manutenções realizadas para cada cliente.
+
 RF-008	O sistema deve permitir que o atendente cancele ou reagende uma manutenção.
+
 RF-009	O sistema deve permitir a autenticação dos usuários com login e senha.
+
 RF-010	O sistema deve exibir os serviços disponíveis para manutenção.
 
 
 ### 2.2. Requisitos Não Funcionais
+
 ID	Descrição
+
 RNF-001	O sistema deve ser acessível via navegador web.
+
 RNF-002	O tempo de resposta para carregamento de qualquer página não deve ultrapassar 3 segundos.
+
 RNF-003	O sistema deve armazenar senhas de usuários de forma segura, utilizando criptografia.
+
 RNF-004	O sistema deve seguir os princípios de usabilidade.
+
 RNF-005	O banco de dados deve suportar pelo menos 1.000 registros de clientes e veículos sem perda de desempenho.
+
 RNF-006	O sistema deve impedir o cadastro de veículos sem um cliente associado.
+
 RNF-007	O sistema deve permitir múltiplos acessos simultâneos sem degradação perceptível de desempenho.
+
 RNF-008	O sistema deve registrar logs de atividade.
+
 RNF-009	A interface do sistema deve ser responsiva para dispositivos móveis e desktops.
+
 RNF-010	O sistema deve ter proteção contra injeção de SQL.
 
 
