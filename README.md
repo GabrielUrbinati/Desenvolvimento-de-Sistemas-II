@@ -216,7 +216,7 @@ O sistema visa facilitar o gerenciamento de oficinas mecânicas, permitindo o ca
 
 ### 2.1. Requisitos Funcionais
 
-ID	                         Descrição
+
 
 RF-001	O sistema deve permitir o cadastro de clientes, armazenando nome, e-mail e telefone.
 
@@ -241,7 +241,7 @@ RF-010	O sistema deve exibir os serviços disponíveis para manutenção.
 
 ### 2.2. Requisitos Não Funcionais
 
-ID	                        Descrição
+
 
 RNF-001	O sistema deve ser acessível via navegador web.
 
