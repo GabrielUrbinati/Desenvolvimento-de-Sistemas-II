@@ -276,7 +276,7 @@ RNF-010	O sistema deve ter proteção contra injeção de SQL.
 
 # TG4 - Diagrama de sequência do caso de uso principal
 
-
+![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramasequencia.png "Logo Title Text 1 " )
 
 
 
