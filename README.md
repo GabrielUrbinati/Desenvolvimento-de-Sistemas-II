@@ -274,6 +274,34 @@ RNF-010	O sistema deve ter proteção contra injeção de SQL.
 ![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/rg2.png "Logo Title Text 1 " )
 
 
+# TG4 - Diagrama de sequência do caso de uso principal
 
 
+
+
+
+
+
+O ator Atendente inicia o processo chamando o controlador de agendamento, que é o responsável por coordenar a execução da funcionalidade.
+Em seguida, o sistema busca os dados do cliente e do veículo, utilizando os respectivos identificadores (CPF e placa).
+Após isso, o atendente informa os dados do agendamento (data, hora e tipo de serviço), e o sistema realiza as seguintes etapas:
+
+Criação de um novo objeto de agendamento contendo o cliente e veículo.
+
+Instanciação de um objeto de manutenção, com o status inicial "Pendente".
+
+Associação da manutenção ao agendamento.
+
+Confirmação da operação para o atendente.
+
+# Aplicação dos Padrões GRASP
+Durante a modelagem do diagrama, foram aplicados os seguintes padrões GRASP para garantir um design orientado a objetos de qualidade:
+
+Controller (Controlador): A classe AgendamentoController atua como controlador do caso de uso, sendo responsável por coordenar as interações e decisões necessárias para completar a operação. Esse padrão favorece o encapsulamento da lógica de aplicação.
+
+Expert (Especialista em Informação): As responsabilidades de criação e associação foram atribuídas às classes que possuem as informações necessárias (como Agendamento e Manutencao). Isso promove um design coeso e distribuído adequadamente.
+
+Low Coupling (Baixo Acoplamento): As interações entre os objetos seguem o princípio de baixo acoplamento, garantindo que cada classe dependa minimamente de outras para executar suas funções.
+
+High Cohesion (Alta Coesão): As operações são mantidas dentro de classes que têm motivos claros para existir, aumentando a legibilidade e facilidade de manutenção do sistema.
 
