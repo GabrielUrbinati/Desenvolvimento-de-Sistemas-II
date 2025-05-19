@@ -297,11 +297,11 @@ Confirmação da operação para o atendente.
 # Aplicação dos Padrões GRASP
 Durante a modelagem do diagrama, foram aplicados os seguintes padrões GRASP para garantir um design orientado a objetos de qualidade:
 
-Controller (Controlador): A classe AgendamentoController atua como controlador do caso de uso, sendo responsável por coordenar as interações e decisões necessárias para completar a operação. Esse padrão favorece o encapsulamento da lógica de aplicação.
+Controlador: A classe AgendamentoController atua como controlador do caso de uso, sendo responsável por coordenar as interações e decisões necessárias para completar a operação. Esse padrão favorece o encapsulamento da lógica de aplicação.
 
-Expert (Especialista em Informação): As responsabilidades de criação e associação foram atribuídas às classes que possuem as informações necessárias (como Agendamento e Manutencao). Isso promove um design coeso e distribuído adequadamente.
+Especialista em Informação: As responsabilidades de criação e associação foram atribuídas às classes que possuem as informações necessárias (como Agendamento e Manutencao). Isso promove um design coeso e distribuído adequadamente.
 
-Low Coupling (Baixo Acoplamento): As interações entre os objetos seguem o princípio de baixo acoplamento, garantindo que cada classe dependa minimamente de outras para executar suas funções.
+Baixo Acoplamento: As interações entre os objetos seguem o princípio de baixo acoplamento, garantindo que cada classe dependa minimamente de outras para executar suas funções.
 
-High Cohesion (Alta Coesão): As operações são mantidas dentro de classes que têm motivos claros para existir, aumentando a legibilidade e facilidade de manutenção do sistema.
+Alta Coesão: As operações são mantidas dentro de classes que têm motivos claros para existir, aumentando a legibilidade e facilidade de manutenção do sistema.
 
