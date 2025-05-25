@@ -305,3 +305,59 @@ Baixo Acoplamento: As interações entre os objetos seguem o princípio de baixo
 
 Alta Coesão: As operações são mantidas dentro de classes que têm motivos claros para existir, aumentando a legibilidade e facilidade de manutenção do sistema.
 
+
+
+
+# 📦 TG5 – Diagrama de Componentes
+
+Este diagrama representa uma **visão de alto nível da arquitetura modular** do sistema de gerenciamento de manutenção de veículos. A modularização proposta segue princípios de baixo acoplamento, alta coesão e responsabilidade única.
+
+---
+![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramacomponente.png "Logo Title Text 1 " )
+
+## 📐 Arquitetura Geral
+
+O sistema está dividido em três camadas principais:
+
+- **Apresentação (Frontend)**: Onde o atendente interage com o sistema.
+- **Camada de Controle e Serviço (Backend)**: Onde ocorrem as regras de negócio e orquestração.
+- **Infraestrutura**: Persistência, segurança e auditoria.
+
+---
+
+## 🔧 Componentes e suas responsabilidades
+
+| Componente | Responsabilidade |
+|------------|------------------|
+| `InterfaceWeb` | Interface visual do atendente. Exibe formulários, listas, botões de ação. |
+| `AgendamentoController` | Controlador central que recebe as requisições da interface e as repassa para os serviços adequados. |
+| `ServicoAgendamento` | Regras de negócio relacionadas a criação, edição e consulta de agendamentos. |
+| `ServicoCliente` | Responsável pelo cadastro, edição e consulta de clientes. |
+| `ServicoVeiculo` | Gerencia o vínculo entre clientes e veículos, bem como o cadastro de veículos. |
+| `ServicoHistorico` | Permite a consulta ao histórico de manutenções já realizadas. |
+| `Autenticador` | Realiza autenticação dos atendentes e protege o acesso ao sistema. |
+| `BancoDeDados` | Componente de persistência de todos os dados (clientes, veículos, agendamentos, manutenções etc.). |
+| `GeradorLogs` | Registra ações sensíveis para fins de auditoria, segurança e confiabilidade. |
+| `RelatorioAgendamentos` | Responsável por gerar relatórios de agendamentos, status e filtros. |
+
+---
+
+## 🔗 Justificativa das Conexões
+
+- A `InterfaceWeb` depende diretamente do `AgendamentoController`, que age como fachada do backend.
+- O `AgendamentoController` está conectado a diferentes **serviços especializados**, cada um responsável por uma parte da lógica.
+- Todos os **serviços** se comunicam com o `BancoDeDados` para operações de CRUD.
+- O `Autenticador` é invocado pelo controlador para validar o acesso de usuários.
+- O `GeradorLogs` é acessado por serviços críticos para garantir o rastreio de ações importantes.
+- O `RelatorioAgendamentos` acessa tanto o banco quanto os logs, pois lida com dados históricos e estatísticas.
+
+---
+
+## ✅ Benefícios da Modularização
+
+- **Facilidade de manutenção**: mudanças em uma regra de negócio não afetam o restante do sistema.
+- **Escalabilidade**: novos serviços podem ser adicionados facilmente.
+- **Segurança**: separação clara entre camadas e controle de acesso.
+- **Auditabilidade**: ações são registradas de forma organizada.
+- **Reuso**: componentes como `ServicoCliente` e `GeradorLogs` podem ser utilizados em outros módulos no futuro.
+
