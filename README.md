@@ -335,10 +335,10 @@ O sistema está dividido em três camadas principais:
 | `ServicoCliente` | Responsável pelo cadastro, edição e consulta de clientes. |
 | `ServicoVeiculo` | Gerencia o vínculo entre clientes e veículos, bem como o cadastro de veículos. |
 | `ServicoHistorico` | Permite a consulta ao histórico de manutenções já realizadas. |
-| `Autenticador` | Realiza autenticação dos atendentes e protege o acesso ao sistema. |
+| `Autenticador` | Realiza autenticação dos atendentes e protege o acesso ao sistema. Este componente acessa o banco de dados para validar usuários e suas credenciais de forma segura. |
 | `BancoDeDados` | Componente de persistência de todos os dados (clientes, veículos, agendamentos, manutenções etc.). |
 | `GeradorLogs` | Registra ações sensíveis para fins de auditoria, segurança e confiabilidade. |
-| `RelatorioAgendamentos` | Responsável por gerar relatórios de agendamentos, status e filtros. |
+| `RelatorioAgendamentos` | Responsável por gerar relatórios de agendamentos, status e filtros. Este componente acessa tanto o banco quanto os logs para consolidar informações históricas e operacionais, garantindo uma visão completa dos dados. |
 
 ---
 
@@ -347,9 +347,9 @@ O sistema está dividido em três camadas principais:
 - A `InterfaceWeb` depende diretamente do `AgendamentoController`, que age como fachada do backend.
 - O `AgendamentoController` está conectado a diferentes **serviços especializados**, cada um responsável por uma parte da lógica.
 - Todos os **serviços** se comunicam com o `BancoDeDados` para operações de CRUD.
-- O `Autenticador` é invocado pelo controlador para validar o acesso de usuários.
+- O `Autenticador` acessa o `BancoDeDados` para validar credenciais de acesso e aplicar segurança aos dados.
 - O `GeradorLogs` é acessado por serviços críticos para garantir o rastreio de ações importantes.
-- O `RelatorioAgendamentos` acessa tanto o banco quanto os logs, pois lida com dados históricos e estatísticas.
+- O `RelatorioAgendamentos` acessa **múltiplas fontes (banco e logs)**, consolidando dados operacionais e históricos para relatórios estratégicos.
 
 ---
 
@@ -359,5 +359,4 @@ O sistema está dividido em três camadas principais:
 - **Escalabilidade**: novos serviços podem ser adicionados facilmente.
 - **Segurança**: separação clara entre camadas e controle de acesso.
 - **Auditabilidade**: ações são registradas de forma organizada.
-- **Reuso**: componentes como `ServicoCliente` e `GeradorLogs` podem ser utilizados em outros módulos no futuro.
-
+- **Reuso**: componentes como `ServicoCliente`, `Autenticador` e `GeradorLogs` podem ser utilizados em outros módulos no futuro.
