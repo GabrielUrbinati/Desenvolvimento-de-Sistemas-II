@@ -315,48 +315,49 @@ Este diagrama representa uma **visão de alto nível da arquitetura modular** do
 ---
 ![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramacomponente2.png "Logo Title Text 1 " )
 
+
 ## 📐 Arquitetura Geral
 
-O sistema está dividido em três camadas principais:
+O sistema está dividido em três grandes camadas lógicas:
 
-- **Apresentação (Frontend)**: Onde o atendente interage com o sistema.
-- **Camada de Controle e Serviço (Backend)**: Onde ocorrem as regras de negócio e orquestração.
-- **Infraestrutura**: Persistência, segurança e auditoria.
+- **Apresentação**: onde o atendente interage com a interface.
+- **Controle e Domínio**: onde ocorre o gerenciamento das regras de negócio.
+- **Infraestrutura**: onde estão os dados persistidos, a segurança e os registros de log.
 
 ---
 
-## 🔧 Componentes e suas responsabilidades
+## 🔧 Componentes e responsabilidades
 
 | Componente | Responsabilidade |
-|------------|------------------|
-| `InterfaceWeb` | Interface visual do atendente. Exibe formulários, listas, botões de ação. |
-| `AgendamentoController` | Controlador central que recebe as requisições da interface e as repassa para os serviços adequados. |
-| `ServicoAgendamento` | Regras de negócio relacionadas a criação, edição e consulta de agendamentos. |
-| `ServicoCliente` | Responsável pelo cadastro, edição e consulta de clientes. |
-| `ServicoVeiculo` | Gerencia o vínculo entre clientes e veículos, bem como o cadastro de veículos. |
-| `ServicoHistorico` | Permite a consulta ao histórico de manutenções já realizadas. |
-| `Autenticador` | Realiza autenticação dos atendentes e protege o acesso ao sistema. Este componente acessa o banco de dados para validar usuários e suas credenciais de forma segura. |
-| `BancoDeDados` | Componente de persistência de todos os dados (clientes, veículos, agendamentos, manutenções etc.). |
-| `GeradorLogs` | Registra ações sensíveis para fins de auditoria, segurança e confiabilidade. |
-| `RelatorioAgendamentos` | Responsável por gerar relatórios de agendamentos, status e filtros. Este componente acessa tanto o banco quanto os logs para consolidar informações históricas e operacionais, garantindo uma visão completa dos dados. |
+|-----------|------------------|
+| `InterfaceWeb` | Tela e navegação para o atendente realizar ações no sistema. |
+| `AgendamentoController` | Controlador principal, intermedia a interface e os demais módulos do domínio. |
+| `CadastroClienteVeiculo` | Gerencia o registro de novos clientes e veículos, mantendo a associação entre ambos. |
+| `GerenciadorAgendamento` | Responsável por criar, editar e consultar agendamentos de manutenção. |
+| `HistoricoManutencao` | Permite visualizar o histórico de serviços realizados por cliente ou veículo. |
+| `GeradorRelatorios` | Produz relatórios baseados nos dados de agendamentos e histórico. |
+| `Autenticador` | Garante que apenas usuários autorizados possam acessar o sistema. |
+| `BancoDeDados` | Armazena os dados estruturados do sistema. |
+| `GeradorLogs` | Registra todas as ações críticas do sistema para auditoria e rastreabilidade. |
 
 ---
 
-## 🔗 Justificativa das Conexões
+## 🔗 Justificativa das conexões
 
-- A `InterfaceWeb` depende diretamente do `AgendamentoController`, que age como fachada do backend.
-- O `AgendamentoController` está conectado a diferentes **serviços especializados**, cada um responsável por uma parte da lógica.
-- Todos os **serviços** se comunicam com o `BancoDeDados` para operações de CRUD.
-- O `Autenticador` acessa o `BancoDeDados` para validar credenciais de acesso e aplicar segurança aos dados.
-- O `GeradorLogs` é acessado por serviços críticos para garantir o rastreio de ações importantes.
-- O `RelatorioAgendamentos` acessa **múltiplas fontes (banco e logs)**, consolidando dados operacionais e históricos para relatórios estratégicos.
+- `InterfaceWeb` se conecta ao `AgendamentoController`, que orquestra todas as operações.
+- O controlador se comunica com os módulos de domínio: `CadastroClienteVeiculo`, `GerenciadorAgendamento`, `HistoricoManutencao`, `GeradorRelatorios`.
+- Todos os módulos de domínio acessam o `BancoDeDados` para persistência de dados.
+- O `Autenticador` também acessa o banco para validar credenciais dos usuários.
+- `GeradorLogs` recebe chamadas do `GerenciadorAgendamento` para registrar ações.
+- `GeradorRelatorios` depende tanto dos dados históricos quanto dos registros de log.
 
 ---
 
-## ✅ Benefícios da Modularização
+## ✅ Benefícios da arquitetura modular
 
-- **Facilidade de manutenção**: mudanças em uma regra de negócio não afetam o restante do sistema.
-- **Escalabilidade**: novos serviços podem ser adicionados facilmente.
-- **Segurança**: separação clara entre camadas e controle de acesso.
-- **Auditabilidade**: ações são registradas de forma organizada.
-- **Reuso**: componentes como `ServicoCliente`, `Autenticador` e `GeradorLogs` podem ser utilizados em outros módulos no futuro.
+- **Coesão**: cada módulo realiza uma função clara e específica.
+- **Reuso**: componentes como `CadastroClienteVeiculo` ou `GeradorRelatorios` podem ser reutilizados em outros sistemas.
+- **Escalabilidade**: novos componentes podem ser acoplados facilmente.
+- **Baixo acoplamento**: dependências controladas por interfaces explícitas.
+- **Organização conforme GRASP e SOLID**: facilita manutenção, expansão e entendimento.
+
