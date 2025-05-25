@@ -313,7 +313,7 @@ Alta Coesão: As operações são mantidas dentro de classes que têm motivos cl
 Este diagrama representa uma **visão de alto nível da arquitetura modular** do sistema de gerenciamento de manutenção de veículos. A modularização proposta segue princípios de baixo acoplamento, alta coesão e responsabilidade única.
 
 ---
-![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramacomponente.png "Logo Title Text 1 " )
+![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramacomponente2.png "Logo Title Text 1 " )
 
 ## 📐 Arquitetura Geral
 
