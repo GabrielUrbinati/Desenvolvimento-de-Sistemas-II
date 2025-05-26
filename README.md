@@ -316,6 +316,7 @@ Este diagrama representa uma **visão de alto nível da arquitetura modular** do
 ![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramaFinal.png "Logo Title Text 1 " )
 
 
+
 # 📐 Arquitetura Geral
 
 O sistema está dividido em **três camadas lógicas**:
@@ -335,11 +336,11 @@ O sistema está dividido em **três camadas lógicas**:
 | `CadastroVeiculo`       | Gerencia o registro de veículos e associação com clientes.                       |
 | `GerenciadorAgdm`       | Responsável por criar, editar e consultar agendamentos de manutenção.           |
 | `Autenticador`          | Garante que apenas usuários autorizados possam acessar o sistema.               |
-| `BancoDedao`            | Armazena os dados estruturados do sistema.                                      |
-| `GeradorLogss`          | Registra todas as ações críticas do sistema para auditoria e rastreabilidade.   |
+| `BancoDedados`            | Armazena os dados estruturados do sistema.                                      |
+| `GeradorLogs`          | Registra todas as ações críticas do sistema para auditoria e rastreabilidade.   |
 | `Relatório`             | Produz relatórios baseados nos dados de agendamentos e histórico.               |
 | `Persistência`          | Responsável pela gravação e leitura de dados do sistema.                        |
-| `FabricaDeServicos (GoF)` | Cria instâncias de serviços usados por diversos componentes, via padrão Factory. |
+| `FabricaDeServicos` | Cria instâncias de serviços usados por diversos componentes, via padrão Factory. |
 
 ---
 
@@ -351,7 +352,7 @@ O sistema está dividido em **três camadas lógicas**:
   - `Autenticador` → `BancoDedao` (validação de credenciais)
   - `GerenciadorAgdm` → `GeradorLogss` e `Relatório`
   - `CadastroVeiculo` → `Persistência`
-- `FabricaDeServicos (GoF)` é usada por `BancoDedao`, `GeradorLogss`, `Relatório` e `Persistência` como fábrica para instanciar objetos.
+- `FabricaDeServicos ` é usada por `BancoDedao`, `GeradorLogss`, `Relatório` e `Persistência` como fábrica para instanciar objetos.
 
 ---
 
@@ -364,3 +365,27 @@ O sistema está dividido em **três camadas lógicas**:
 - **Aderência a GRASP e SOLID**: facilita manutenção, expansão e entendimento do sistema.
 
 
+---
+
+## 💡 Observação Técnica: Por que `CadastroVeiculo` usa `Persistência`?
+
+O componente `CadastroVeiculo` não deve se conectar diretamente ao banco de dados, pois isso violaria o princípio da **separação de responsabilidades (SRP)**.
+
+A responsabilidade do `CadastroVeiculo` é aplicar regras de negócio, como:
+- Validar dados do veículo
+- Associar veículos a clientes
+- Verificar duplicidade de registros
+
+Já o componente `Persistência` cuida do *como* os dados são armazenados:
+- Interação com o banco de dados
+- Comandos SQL ou ORMs
+- Estratégias de leitura/escrita
+
+### ✅ Vantagens dessa separação:
+
+- **Desacoplamento**: facilita a troca da tecnologia de banco de dados.
+- **Testabilidade**: o módulo de persistência pode ser simulado em testes.
+- **Organização**: cada componente faz uma coisa só — domínio decide *o quê*, persistência cuida do *como*.
+- **Reuso**: outros componentes, como `HistoricoManutencao` ou `Agendamento`, também podem usar a mesma `Persistência`.
+
+Essa prática segue os princípios do **Clean Architecture**, **GRASP** e **SOLID**, tornando o sistema mais robusto e evolutivo.
