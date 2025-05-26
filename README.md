@@ -313,12 +313,12 @@ Alta Coesão: As operações são mantidas dentro de classes que têm motivos cl
 Este diagrama representa uma **visão de alto nível da arquitetura modular** do sistema de gerenciamento de manutenção de veículos. A modularização proposta segue princípios de baixo acoplamento, alta coesão e responsabilidade única.
 
 ---
-![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramacomponente2.png "Logo Title Text 1 " )
+![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramaFinal.png "Logo Title Text 1 " )
 
 
-## 📐 Arquitetura Geral
+# 📐 Arquitetura Geral
 
-O sistema está dividido em três grandes camadas lógicas:
+O sistema está dividido em **três camadas lógicas**:
 
 - **Apresentação**: onde o atendente interage com a interface.
 - **Controle e Domínio**: onde ocorre o gerenciamento das regras de negócio.
@@ -326,38 +326,41 @@ O sistema está dividido em três grandes camadas lógicas:
 
 ---
 
-## 🔧 Componentes e responsabilidades
+## 🔧 Componentes e Responsabilidades
 
-| Componente | Responsabilidade |
-|-----------|------------------|
-| `InterfaceWeb` | Tela e navegação para o atendente realizar ações no sistema. |
-| `AgendamentoController` | Controlador principal, intermedia a interface e os demais módulos do domínio. |
-| `CadastroClienteVeiculo` | Gerencia o registro de novos clientes e veículos, mantendo a associação entre ambos. |
-| `GerenciadorAgendamento` | Responsável por criar, editar e consultar agendamentos de manutenção. |
-| `HistoricoManutencao` | Permite visualizar o histórico de serviços realizados por cliente ou veículo. |
-| `GeradorRelatorios` | Produz relatórios baseados nos dados de agendamentos e histórico. |
-| `Autenticador` | Garante que apenas usuários autorizados possam acessar o sistema. |
-| `BancoDeDados` | Armazena os dados estruturados do sistema. |
-| `GeradorLogs` | Registra todas as ações críticas do sistema para auditoria e rastreabilidade. |
-
----
-
-## 🔗 Justificativa das conexões
-
-- `InterfaceWeb` se conecta ao `AgendamentoController`, que orquestra todas as operações.
-- O controlador se comunica com os módulos de domínio: `CadastroClienteVeiculo`, `GerenciadorAgendamento`, `HistoricoManutencao`, `GeradorRelatorios`.
-- Todos os módulos de domínio acessam o `BancoDeDados` para persistência de dados.
-- O `Autenticador` também acessa o banco para validar credenciais dos usuários.
-- `GeradorLogs` recebe chamadas do `GerenciadorAgendamento` para registrar ações.
-- `GeradorRelatorios` depende tanto dos dados históricos quanto dos registros de log.
+| Componente              | Responsabilidade                                                                 |
+|-------------------------|----------------------------------------------------------------------------------|
+| `InterfaceWeb`          | Tela e navegação para o atendente realizar ações no sistema.                     |
+| `AgendamentoController` | Controlador principal, intermedia a interface e os demais módulos do domínio.    |
+| `CadastroVeiculo`       | Gerencia o registro de veículos e associação com clientes.                       |
+| `GerenciadorAgdm`       | Responsável por criar, editar e consultar agendamentos de manutenção.           |
+| `Autenticador`          | Garante que apenas usuários autorizados possam acessar o sistema.               |
+| `BancoDedao`            | Armazena os dados estruturados do sistema.                                      |
+| `GeradorLogss`          | Registra todas as ações críticas do sistema para auditoria e rastreabilidade.   |
+| `Relatório`             | Produz relatórios baseados nos dados de agendamentos e histórico.               |
+| `Persistência`          | Responsável pela gravação e leitura de dados do sistema.                        |
+| `FabricaDeServicos (GoF)` | Cria instâncias de serviços usados por diversos componentes, via padrão Factory. |
 
 ---
 
-## ✅ Benefícios da arquitetura modular
+## 🔗 Justificativa das Conexões
+
+- `InterfaceWeb` conecta-se ao `AgendamentoController`, que orquestra as operações.
+- O `AgendamentoController` se comunica diretamente com `Autenticador`, `GerenciadorAgdm` e `CadastroVeiculo`.
+- Cada módulo de domínio conecta-se a seus respectivos serviços de suporte:
+  - `Autenticador` → `BancoDedao` (validação de credenciais)
+  - `GerenciadorAgdm` → `GeradorLogss` e `Relatório`
+  - `CadastroVeiculo` → `Persistência`
+- `FabricaDeServicos (GoF)` é usada por `BancoDedao`, `GeradorLogss`, `Relatório` e `Persistência` como fábrica para instanciar objetos.
+
+---
+
+## ✅ Benefícios da Arquitetura Modular
 
 - **Coesão**: cada módulo realiza uma função clara e específica.
-- **Reuso**: componentes como `CadastroClienteVeiculo` ou `GeradorRelatorios` podem ser reutilizados em outros sistemas.
+- **Reuso**: componentes como `CadastroVeiculo` ou `Relatório` podem ser reutilizados em outros sistemas.
 - **Escalabilidade**: novos componentes podem ser acoplados facilmente.
 - **Baixo acoplamento**: dependências controladas por interfaces explícitas.
-- **Organização conforme GRASP e SOLID**: facilita manutenção, expansão e entendimento.
+- **Aderência a GRASP e SOLID**: facilita manutenção, expansão e entendimento do sistema.
+
 
