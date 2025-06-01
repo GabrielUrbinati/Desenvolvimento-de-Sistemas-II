@@ -393,7 +393,7 @@ Essa prática segue os princípios do **Clean Architecture**, **GRASP** e **SOLI
 
 # TG6 - Diagrama de Pacotes: Arquitetura em Camadas do Sistema
 
-![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramaFinal.png "Logo Title Text 1 " )
+![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/pacotes.png "pacotes " )
 
 Este documento apresenta o **Diagrama de Pacotes** do nosso sistema de gerenciamento de manutenção de veículos. Este diagrama é fundamental para compreender a **arquitetura modular e em camadas** do projeto, demonstrando a organização lógica do código e as dependências entre os diferentes componentes do sistema.
 
