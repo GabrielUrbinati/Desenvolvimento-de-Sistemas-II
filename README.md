@@ -389,3 +389,81 @@ Já o componente `Persistência` cuida do *como* os dados são armazenados:
 - **Reuso**: outros componentes, como `HistoricoManutencao` ou `Agendamento`, também podem usar a mesma `Persistência`.
 
 Essa prática segue os princípios do **Clean Architecture**, **GRASP** e **SOLID**, tornando o sistema mais robusto e evolutivo.
+
+
+# TG6 - Diagrama de Pacotes: Arquitetura em Camadas do Sistema
+
+![alt text](https://github.com/GabrielUrbinati/Desenvolvimento-de-Sistemas-II/blob/main/diagramaFinal.png "Logo Title Text 1 " )
+
+Este documento apresenta o **Diagrama de Pacotes** do nosso sistema de gerenciamento de manutenção de veículos. Este diagrama é fundamental para compreender a **arquitetura modular e em camadas** do projeto, demonstrando a organização lógica do código e as dependências entre os diferentes componentes do sistema.
+
+A modularização adotada segue princípios de **baixo acoplamento, alta coesão e responsabilidade única**, buscando facilitar a manutenção, o desenvolvimento e a escalabilidade do sistema.
+
+## Visão Geral do Diagrama de Pacotes
+
+O diagrama está organizado em quatro camadas principais, que representam diferentes níveis de abstração e responsabilidade dentro da aplicação:
+
+1.  **Apresentação:** Responsável pela interface com o usuário.
+2.  **Aplicação:** Gerencia o fluxo de trabalho e orquestra as operações de negócio.
+3.  **Negócio:** Contém a lógica de negócio principal do sistema.
+4.  **Persistência:** Lida com o armazenamento e recuperação de dados.
+
+### Detalhes das Camadas e Pacotes
+
+Abaixo, detalhamos cada camada e os pacotes que a compõem, juntamente com suas principais responsabilidades e as dependências observadas:
+
+#### 1. Camada de Apresentação
+
+Esta camada é a mais externa e interage diretamente com o usuário.
+
+* **`UILogin`**: Pacote responsável pela interface de login do sistema. Inicia o processo de autenticação.
+* **`UIAgendarManutencao`**: Pacote para a interface de agendamento de manutenções. Permite ao usuário solicitar e configurar agendamentos.
+* **`UICadastrarVeiculo`**: Pacote dedicado à interface de cadastro de veículos.
+* **`UIConsultarAgendamento`**: Pacote para a interface de consulta de agendamentos existentes.
+
+**Dependências:** Os pacotes da camada de Apresentação dependem dos controladores na camada de Aplicação para realizar suas operações.
+
+#### 2. Camada de Aplicação
+
+Atua como um intermediário entre a camada de Apresentação e a camada de Negócio. É responsável por gerenciar as requisições da interface do usuário e coordenar as interações com a lógica de negócio.
+
+* **`AgendamentoController`**: Gerencia as operações relacionadas a agendamentos, como criação, consulta e atualização.
+* **`LoginController`**: Controla o fluxo de autenticação e autorização de usuários.
+* **`CadastroVeiculoController`**: Responsável pelas operações de cadastro de veículos.
+
+**Dependências:** Os `Controllers` nesta camada dependem da lógica de negócio na camada de Negócio para executar suas funcionalidades.
+
+#### 3. Camada de Negócio (ou Domínio)
+
+Esta é a camada central do sistema, onde reside toda a lógica de negócio e as regras de negócio.
+
+* **`Agendamento`**: Contém a lógica e as entidades relacionadas a agendamentos de manutenção.
+* **`Login`**: Contém a lógica para o processo de autenticação e gestão de usuários.
+* **`Cadastro`**: Contém a lógica e as entidades relacionadas ao cadastro de veículos e outras informações relevantes.
+
+**Dependências:** Os pacotes de Negócio podem depender de outros pacotes de Negócio (para reutilização de lógica) e da camada de Persistência para acessar e manipular dados.
+
+#### 4. Camada de Persistência
+
+Responsável por todas as operações de acesso a dados, isolando a lógica de negócio dos detalhes de armazenamento (banco de dados, arquivos, etc.).
+
+* **`DAOAgendamento`**: Data Access Object para as entidades de agendamento. Responsável por salvar, recuperar, atualizar e deletar dados de agendamento no banco de dados.
+* **`DAOLogin`**: Data Access Object para as entidades de login/usuário.
+* **`DAOCadastro`**: Data Access Object para as entidades de cadastro (veículos, etc.).
+
+**Dependências:** Esta camada não deve ter dependências de camadas superiores. As dependências são sempre no sentido de baixo para cima (ou seja, Negócio depende de Persistência, Aplicação depende de Negócio, Apresentação depende de Aplicação).
+
+## Comparativo com TG4 e TG5 (Correções e Evolução)
+
+É importante notar a evolução da arquitetura desde as entregas anteriores.
+
+* **Comparado ao TG4 (Estrutura Inicial)**: No TG4, nossa abordagem inicial pode ter sido mais simplificada. O Diagrama de Pacotes para o TG6 reflete uma **clara separação de responsabilidades em camadas**, o que pode não ter sido tão explícito ou rigidamente aplicado no TG4. A transição para um modelo em camadas mais robusto visa melhorar a manutenibilidade e a escalabilidade.
+* **Comparado ao TG5 (Diagrama de Componentes)**: Enquanto o TG5 focou nos **Componentes** (como `AgendamentoController`, `BancoDeDados`, etc.) e suas interações a um nível mais granular e tecnológico, o TG6, através do Diagrama de Pacotes, apresenta uma **visão mais estratégica e lógica da organização do código em termos de domínios e responsabilidades**. O Diagrama de Pacotes complementa o Diagrama de Componentes ao agrupar esses componentes em estruturas lógicas maiores e definir as dependências entre elas.
+
+**Principais Correções e Melhorias na Abordagem para o TG6:**
+
+* **Reforço da Coesão e Acoplamento:** A estrutura de pacotes agora visa garantir que cada pacote tenha uma responsabilidade bem definida (alta coesão) e que as dependências entre eles sejam mínimas e bem controladas (baixo acoplamento).
+* **Clara Separação de Preocupações:** As camadas de Apresentação, Aplicação, Negócio e Persistência estão mais bem definidas e isoladas, o que facilita a modificação de uma camada sem afetar as outras, desde que a interface de comunicação seja mantida.
+* **Consistência nas Nomenclaturas:** As nomenclaturas dos pacotes e seus conteúdos estão mais padronizadas, seguindo convenções claras para cada camada.
+
+Esta estrutura em camadas é um pilar para o desenvolvimento de um sistema robusto e de fácil manutenção, garantindo que a lógica de negócio esteja desacoplada da interface do usuário e dos detalhes de persistência.
